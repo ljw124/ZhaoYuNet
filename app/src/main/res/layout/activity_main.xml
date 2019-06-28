@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.MainActivity">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.zhaoyu.viewmodel.HomeVM" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/rl_contain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.zhaoyu.widget.CustomViewPager
+            android:id="@+id/vp_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_divide"/>
+
+        <TextView
+            android:id="@+id/tv_divide"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="#55aaaaaa"/>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/colorWhite"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+</layout>

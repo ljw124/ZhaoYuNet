@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragment.ResetPwdFragment">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="com.example.zhaoyu.viewmodel.LoginVM" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/action_bar_color">
+
+        <ImageView
+            android:onClick="@{()->vm.toLoginPage()}"
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/margin_10"
+            android:layout_height="21dp"
+            android:layout_marginLeft="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_36"
+            android:src="@mipmap/back_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:visibility="invisible"
+            android:id="@+id/btn_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_36"
+            android:layout_marginRight="@dimen/margin_38"
+            android:background="@null"
+            android:text="@string/login"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_83"
+            android:text="@string/reset_pwd"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_24"
+            app:layout_constraintStart_toStartOf="@+id/iv_back"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+        <TextView
+            android:visibility="@{vm.isShowTips ? View.VISIBLE : View.INVISIBLE}"
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24"
+            android:text="@={vm.tips}"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintStart_toStartOf="@+id/iv_back"
+            app:layout_constraintTop_toBottomOf="@+id/tv_register" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginTop="@dimen/margin_10"
+            android:src="@mipmap/ic_phone"
+            app:layout_constraintStart_toStartOf="@+id/iv_back"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tips" />
+
+        <View
+            android:id="@+id/view_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginLeft="@dimen/margin_87"
+            android:layout_marginRight="@dimen/margin_38"
+            android:background="@mipmap/ic_name_pwd_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintTop_toTopOf="@+id/iv_phone" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_40"
+            android:background="@null"
+            android:hint="@string/enter_name"
+            android:maxLength="11"
+            android:text="@={vm.userName}"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/text_size_13"
+            app:layout_constraintBottom_toBottomOf="@+id/view_name"
+            app:layout_constraintStart_toStartOf="@+id/view_name"
+            app:layout_constraintTop_toTopOf="@+id/view_name" />
+
+        <ImageView
+            android:id="@+id/iv_pwd"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginTop="@dimen/margin_40"
+            android:src="@mipmap/ic_pwd"
+            app:layout_constraintStart_toStartOf="@+id/iv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
+
+        <View
+            android:id="@+id/view_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginLeft="@dimen/margin_87"
+            android:layout_marginRight="@dimen/margin_38"
+            android:background="@mipmap/ic_name_pwd_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_pwd"
+            app:layout_constraintStart_toEndOf="@+id/iv_pwd"
+            app:layout_constraintTop_toTopOf="@+id/iv_pwd" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_40"
+            android:background="@null"
+            android:hint="@string/enter_new_pwd"
+            android:text="@={vm.userPwd}"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/text_size_13"
+            app:layout_constraintBottom_toBottomOf="@+id/view_pwd"
+            app:layout_constraintStart_toStartOf="@+id/view_pwd"
+            app:layout_constraintTop_toTopOf="@+id/view_pwd" />
+
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginTop="@dimen/margin_40"
+            android:src="@mipmap/ic_code"
+            app:layout_constraintStart_toStartOf="@+id/iv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/iv_pwd" />
+        <View
+            android:id="@+id/view_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_45"
+            android:layout_marginLeft="@dimen/margin_87"
+            android:layout_marginRight="@dimen/margin_38"
+            android:background="@mipmap/ic_name_pwd_bg"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_code"
+            app:layout_constraintStart_toEndOf="@+id/iv_code"
+            app:layout_constraintTop_toTopOf="@+id/iv_code" />
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_40"
+            android:background="@null"
+            android:hint="@string/enter_code"
+            android:text="@={vm.securityCode}"
+            android:maxLength="6"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="@dimen/text_size_13"
+            app:layout_constraintBottom_toBottomOf="@+id/view_code"
+            app:layout_constraintStart_toStartOf="@+id/view_code"
+            app:layout_constraintTop_toTopOf="@+id/view_code" />
+        <Button
+            android:layout_width="@dimen/margin_108"
+            android:layout_height="@dimen/margin_34"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@drawable/shape_button"
+            android:text="@string/get_code"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_10"
+            app:layout_constraintBottom_toBottomOf="@+id/view_code"
+            app:layout_constraintRight_toRightOf="@+id/view_code"
+            app:layout_constraintTop_toTopOf="@+id/view_code" />
+
+        <Button
+            android:onClick="@{()->vm.resetPwd()}"
+            android:id="@+id/btn_register"
+            android:layout_width="305dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/margin_42"
+            android:background="@drawable/shape_button"
+            android:text="@string/complete"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_17"
+            app:layout_constraintEnd_toEndOf="@+id/view_code"
+            app:layout_constraintStart_toStartOf="@+id/iv_code"
+            app:layout_constraintTop_toBottomOf="@+id/iv_code" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

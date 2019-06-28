@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_radius_gray"
+            android:drawablePadding="5dp"
+            android:drawableStart="@mipmap/ic_search"
+            android:gravity="center_vertical"
+            android:hint="职位名称"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingRight="35dp"
+            android:paddingLeft="8dp"
+            android:textColor="#9F9F9F"
+            android:textColorHint="#C9C9C9"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_size_20" />
+
+        <ImageView
+            android:id="@+id/iv_clean"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/ic_search_clean"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="搜索"
+        android:textColor="#00B7EE"
+        android:textSize="@dimen/text_size_18"
+        android:visibility="gone" />
+</merge>

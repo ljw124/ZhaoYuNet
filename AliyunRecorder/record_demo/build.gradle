@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion externalCompileSdkVersion
+    defaultConfig {
+        minSdkVersion externalMinSdkVersion
+        targetSdkVersion externalTargetSdkVersion
+        consumerProguardFiles 'lib-proguard-rules.pro'
+    }
+    lintOptions {
+        warning 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':AliyunSVideoBase')
+    implementation project(":AliyunSvideoMusic")
+    api project(path: ':AliyunFileDownLoader:downloadermanager')
+    implementation externalGSON
+    implementation externalFaceUnity
+
+    //裁剪的依赖
+    implementation project(':AliyunCrop:crop_demo')
+    //编辑的依赖
+    api project(':AliyunEditor:editor_demo')
+//    implementation project(':AliyunImport:import_demo')
+    implementation project(':AliyunFileDownLoader:downloadermanager')
+}

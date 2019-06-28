@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragment.home.MessageFragment">
+    <data>
+        <variable
+            name="vm"
+            type="com.example.zhaoyu.viewmodel.MessageVM" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_17"
+            android:text="@string/message"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:paddingTop="@dimen/margin_30"
+            android:paddingBottom="@dimen/margin_14"
+            android:background="@drawable/action_bar_color1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_42"
+            android:paddingLeft="@dimen/margin_32"
+            android:gravity="center_vertical"
+            android:text="@string/contact"
+            android:textSize="@dimen/text_size_16"
+            android:background="#F4F5FA"/>
+        <com.hyphenate.easeui.widget.EaseConversationList
+            android:id="@+id/list_contact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            app:cvsListPrimaryTextSize="16sp" />
+    </LinearLayout>
+</layout>

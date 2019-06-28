@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.fragment.city.HotCityFragment">
+        <TextView
+            android:id="@+id/tv_often"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_22"
+            android:text="常用城市"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_often"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_18"
+            app:layout_constraintTop_toBottomOf="@+id/tv_often"/>
+        <TextView
+            android:id="@+id/tv_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门城市"
+            android:layout_marginTop="@dimen/margin_22"
+            app:layout_constraintStart_toStartOf="@+id/tv_often"
+            app:layout_constraintTop_toBottomOf="@+id/rv_often"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_hot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_18"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hot"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion externalCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion externalMinSdkVersion
+        targetSdkVersion externalTargetSdkVersion
+        consumerProguardFiles 'lib-proguard-rules.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':AliyunSVideoBase')
+    implementation project(":AliyunSvideoMusic")
+    api project(':AliyunFileDownLoader:downloadermanager')
+    implementation project(':AlivcMedia')
+    implementation project(':AliyunCrop:crop_demo')
+    implementation externalAndroidDesign
+    implementation externalGSON
+    implementation externalAliyunOSS
+    implementation externalEventBus
+    implementation externalAliyunVodUpload
+}

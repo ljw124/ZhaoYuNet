@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    app:cardBackgroundColor="#FFF"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_162">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/margin_76"
+            android:layout_height="@dimen/margin_76"
+            android:layout_marginTop="@dimen/margin_18"
+            android:layout_marginLeft="@dimen/margin_34"
+            android:src="@mipmap/ic_my"
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:text="凯旋门"
+            android:textSize="@dimen/text_size_15"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/iv_logo"
+            app:layout_constraintTop_toTopOf="@+id/iv_logo" />
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/shape_tv_bg"
+            android:text="杭州 西湖区 古墩路68号"
+            android:textSize="@dimen/text_size_13"
+            app:layout_constraintStart_toStartOf="@+id/tv_company_name"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_logo"/>
+        <View
+            android:id="@+id/view_division"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#aaa"
+            android:layout_marginTop="@dimen/margin_17"
+            android:layout_marginLeft="@dimen/margin_34"
+            android:layout_marginRight="@dimen/margin_34"
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo"/>
+
+        <LinearLayout
+            android:id="@+id/ll_position_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_34"
+            android:layout_marginTop="@dimen/margin_14"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/view_division">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热招:"
+                android:textSize="@dimen/text_size_12"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Android开发工程师"
+                android:textColor="@color/color_bar_select"
+                android:textSize="@dimen/text_size_12"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="等111个岗位"
+                android:textSize="@dimen/text_size_12"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_34"
+            android:background="@null"
+            android:src="@mipmap/more"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ll_position_detail"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_position_detail"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
